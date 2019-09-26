@@ -31,7 +31,7 @@ class FrontpageStats(models.Model):
 
 class GeneAutocomplete(models.Model):
     species = models.CharField(
-        max_length=255, blank=True, null=True, pimary_key=True)
+        max_length=255, blank=True, primary_key=True)
     stable_id = models.CharField(max_length=128)
     display_label = models.CharField(max_length=128, blank=True, null=True)
     location = models.CharField(max_length=60, blank=True, null=True)

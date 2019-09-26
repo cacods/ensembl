@@ -16,7 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from genes import api
+
+geneautocomplete_list = api.GeneAutocompleteViewSet.as_view({
+    'get': 'list',
+})
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls'))
+    path('api-auth/', include('rest_framework.urls')),
+
+    path('gene_suggest/<str:query>/<str:species>/<int:limit>',
+         geneautocomplete_list, name='geneautocomplete-list')
 ]
