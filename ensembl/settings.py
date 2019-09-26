@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'genes'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +79,18 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'remote': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ensembl_website_97',
+        'USER': 'anonymous',
+        'PASSWORD': '',
+        'HOST': 'ensembldb.ensembl.org',
+        'PORT': '3306'
     }
 }
+
+TEST_RUNNER = 'ensembl.testrunner.NoDbTestRunner'
 
 
 # Password validation
