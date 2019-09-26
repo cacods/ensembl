@@ -90,6 +90,8 @@ DATABASES = {
     }
 }
 
+TEST_RUNNER = 'ensembl.testrunner.NoDbTestRunner'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
